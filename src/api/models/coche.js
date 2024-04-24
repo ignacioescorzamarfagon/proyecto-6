@@ -3,12 +3,13 @@ const mongoose = require('mongoose');
 
 const cocheSchema = new mongoose.Schema(
   {
-    matricula: { type: String, required: true, unique: true },
-    marca: { type: String, required: false, unique: false },
-    modelo: { type: String, required: false, unique: false },
-    cilindrada: { type: String, required: false, unique: false },
-    potencia: { type: String, required: false, unique: false },
-    color: { type: String, required: false, unique: false }
+    //Nota: poner false es lo mismo que no poner nada
+    matricula: { type: String, required: true, unique: true, trim: true },
+    marca: { type: String, trim: true },
+    modelo: { type: String, trim: true },
+    cilindrada: { type: String, trim: true },
+    potencia: { type: String, trim: true },
+    color: { type: String, trim: true }
   },
   {
     timestamps: true,
